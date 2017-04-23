@@ -13,7 +13,16 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('park_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('objet_id');
+            $table->unsignedInteger('value');
+            $table->string('description');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('reviews');
     }
 }

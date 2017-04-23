@@ -13,7 +13,13 @@ class CreateEventParticipantsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('event_participants', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('participant_category');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreateEventParticipantsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('event_participants');
     }
 }

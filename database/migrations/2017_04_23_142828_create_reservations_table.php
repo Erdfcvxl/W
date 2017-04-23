@@ -13,7 +13,17 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('reservations', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('temp_user_id');
+            $table->unsignedInteger('park_id');
+            $table->dateTime('start_time');
+            $table->unsignedInteger('duration');
+            $table->unsignedInteger('status');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class CreateReservationsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('reservations');
     }
 }

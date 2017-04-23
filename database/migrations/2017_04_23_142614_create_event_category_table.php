@@ -13,7 +13,13 @@ class CreateEventCategoryTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('event_category', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name', 30);
+            $table->string('description');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreateEventCategoryTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('event_category');
     }
 }

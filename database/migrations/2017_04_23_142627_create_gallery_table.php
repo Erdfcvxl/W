@@ -13,7 +13,15 @@ class CreateGalleryTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('gallery', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('parent_type');
+            $table->unsignedInteger('parent_idea');
+            $table->string('media_path', 30);
+            $table->unsignedInteger('media_type');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateGalleryTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('gallery');
     }
 }

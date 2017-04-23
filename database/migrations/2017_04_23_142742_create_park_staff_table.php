@@ -13,7 +13,13 @@ class CreateParkStaffTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('park_staff', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('park_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreateParkStaffTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('park_staff');
     }
 }

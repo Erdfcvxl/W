@@ -13,7 +13,15 @@ class CreateTempUsersTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('temp_users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name', 25);
+            $table->string('surname', 25);
+            $table->string('email')->unique();
+            $table->string('phone_number', 14);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateTempUsersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('temp_users');
     }
 }

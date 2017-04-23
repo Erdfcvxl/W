@@ -13,7 +13,18 @@ class CreateReservationConfigTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::defaultStringLength(191);
+        Schema::create('reservation_config', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('park_id');
+            $table->unsignedInteger('min_reservation');
+            $table->unsignedInteger('max_reservation');
+            $table->unsignedInteger('decline_time');
+            $table->dateTime('open_time');
+            $table->dateTime('close_time');
+            $table->unsignedInteger('upfront_percentage');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +34,6 @@ class CreateReservationConfigTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('reservation_config');
     }
 }
