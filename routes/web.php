@@ -12,9 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('schedule');
 });
 
+
+Route::get('schedule', [
+    'uses' => 'ReservationController@getSchedule',
+    'as' => 'schedule'
+]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
