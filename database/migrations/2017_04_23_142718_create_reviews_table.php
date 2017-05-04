@@ -18,7 +18,7 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('park_id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('objet_id');
+            $table->unsignedInteger('object_id');
             $table->unsignedInteger('value');
             $table->string('description');
             $table->timestamps();
