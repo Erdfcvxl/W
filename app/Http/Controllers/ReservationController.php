@@ -20,7 +20,6 @@ class ReservationController extends Controller
 
             if ($park_id != 0) {
                 $reservations = $reservation->getParkReservations($park_id);
-                //echo $reservations;
                 return view('schedule', ['reservations' => $reservations]);
             } else return back();
         } else return back();
