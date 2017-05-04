@@ -13,7 +13,8 @@ class ReservationController extends Controller
     public function getSchedule () {
         $reservation = new Reservation();
         $user = Auth::user(); //logged in user
-        //$park_id = User::getParkIdByUserId($user->email);                   // non static static shit
+        //$park_id = User::getParkIdByUserId($user->email);
+        //pamirsau sutvarkyt, imesiu pabaigta penktadieni/savaitgali
         $reservations = $reservation->getParkReservations(1);
         return view('schedule', ['reservations' => $reservations]);
     }
