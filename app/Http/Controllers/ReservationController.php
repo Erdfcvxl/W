@@ -10,12 +10,20 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
-    public function getSchedule () {
-        $reservation = new Reservation();
-        $user = Auth::user(); //logged in user
-        //$park_id = User::getParkIdByUserId($user->email);                   // non static static shit
-        $reservations = $reservation->getParkReservations(1);
-        return view('schedule', ['reservations' => $reservations]);
+    public function getSchedule ()
+    {
+        if (Auth::check())
+        {
+            $reservation = new Reservation();
+            $user = new User();
+            $park_id = $user->getParkID(Auth::id());
+
+            if ($park_id != 0) {
+                $reservations = $reservation->getParkReservations($park_id);
+                //echo $reservations;
+                return view('schedule', ['reservations' => $reservations]);
+            } else return back();
+        } else return back();
     }
 
     public function postEditSchedule () {

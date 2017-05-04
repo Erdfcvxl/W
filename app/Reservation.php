@@ -17,11 +17,12 @@ class Reservation extends Model
     }
 
     public function getParkReservations($park_id) {
-        return DB::table('reservations')
+        $table = DB::table('reservations')
         ->join('users', 'reservations.user_id', '=', 'users.id')
         ->select('reservations.*', 'users.name', 'users.surname', 'users.phone_number')
         ->where('reservations.park_id', '=', $park_id)
         ->orderBy('start_time', 'asc')->get();
+        return $table;
     }
 
     public function getReservationById ($id) {
