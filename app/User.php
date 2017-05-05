@@ -23,11 +23,12 @@ class User extends Authenticatable
         return $this->hasMany('App\Reservation');
     }
 
-    public function getParkID($id) {
-        return DB::table('park_staff')->where('user_id', '=', $id)->value('park_id');
+    public function getPark($id) {
+        $park_id = DB::table('park_staff')->where('user_id', '=', $id)->value('park_id');
+        return  DB::table('parks')->where('id', '=', $park_id)->first();
     }
 
     public function getParkStaff() {
-        return $this->hasOne('App\ParkStaff');
+        return $this->belongsTo('App\ParkStaff');
     }
 }

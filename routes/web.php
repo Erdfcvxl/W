@@ -12,14 +12,42 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('schedule');
+    return redirect()->route('admin/schedule');
+});
+
+Route::group(['prefix' => 'admin'], function (){
+    Route::get('createEvent', [
+        'uses' =>'Admin\EventController@getCreateEvent',
+        'as' => 'admin.createEvent'
+    ]);
+
+    Route::post('createEvent', [
+        'uses' => 'Admin\EventController@postCreateEvent',
+        'as' => 'admin.createEvent'
+    ]);
+
+    Route::get('editEvent/{id}', [
+        'uses'  => 'Admin\EventController@getEditEvent',
+        'as' => 'admin.editEvent'
+    ]);
+
+    Route::post('editEvent',[
+        'uses' => 'Admin\EventController@postEditEvent',
+        'as' => 'admin.editEvent'
+    ]);
+
+    Route::get('events', [
+        'uses' => 'Admin\EventController@getEvents',
+        'as' => 'admin.events'
+    ]);
+
+    Route::get('schedule', [
+        'uses' => 'ReservationController@getAdminReservations',
+        'as' => 'admin.schedule'
+    ]);
 });
 
 
-Route::get('schedule', [
-    'uses' => 'ReservationController@getSchedule',
-    'as' => 'schedule'
-]);
 
 Auth::routes();
 

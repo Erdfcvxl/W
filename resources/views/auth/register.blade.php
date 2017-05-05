@@ -42,7 +42,7 @@
                             <label for="phone_number" class="col-md-4 control-label">Phone Number</label>
 
                             <div class="col-md-6">
-                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('surname') }}" required>
+                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}" required>
 
                                 @if ($errors->has('phone_number'))
                                     <span class="help-block">
@@ -87,6 +87,17 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="terms" {{ old('terms') ? 'checked' : '' }}>I accept the <a href="#">Terms & Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

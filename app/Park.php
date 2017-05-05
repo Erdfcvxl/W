@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Park extends Model
 {
     protected $fillable = [
-        'id', 'name','address', 'working_hours', 'website', 'facebook_link', 'latitude', 'longitude'
+        'name','address', 'working_hours', 'website', 'facebook_link', 'latitude', 'longitude'
     ];
     protected $table = 'parks';
 
@@ -16,6 +16,6 @@ class Park extends Model
     }
 
     public function getParkStaff() {
-        return $this->hasOne('App\ParkStaff');
+        return $this->belongsTo('App\ParkStaff');
     }
 }
