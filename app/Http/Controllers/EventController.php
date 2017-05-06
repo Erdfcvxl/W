@@ -21,8 +21,13 @@ class EventController extends Controller
     }
 
     public function getAdminEvents() {
-        $events = Event::orderBy('id', 'desc')->where('park_id', '=', getLoggedUser()->id);
+        $events = Event::orderBy('id', 'desc')->where('park_id', '=', getLoggedPark()->id);
         return view('admin.events', ['events' => $events]);
+    }
+
+    public function getParkEvants($park_id) {
+        $events = Event::where('park_id', '=', $park_id)->get();
+        return view('events', ['events' => $events]);
     }
 
     public function getEvent($id) {
