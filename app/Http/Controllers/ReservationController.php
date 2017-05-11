@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReservationRequest;
 use App\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,19 +41,23 @@ class ReservationController extends Controller
         return redirect()->route('reservations')->with('info', 'Reservation deleted.');
     }
 
-    public function postCreateReservation(Request $request) {
+    public function postCreateReservation(ReservationRequest $request) {
+        /*
         $this->validate($request, [
             'park_id' => 'required',
-            'start_time' => 'required',
+            'date' => 'required',
+            'time' => 'required',
             'duration' => 'required',
             'status' => 'required'
         ]);
+        */
 
         $reservation = new Reservation([
             'user_id'=> getLoggedUser()->id,
             'temp_user_id' =>0, //Sugalvot ka daryt del temp useriu
             'park_id' => $request->input('park_id'),
-            'start_time' => $request->input('start_time'),
+            'date' => $request->input('date'),
+            'time' => $request->input('time'),
             'duration' => $request->input('duration'),
             'status' => $request->input('status')
         ]);
@@ -62,16 +67,20 @@ class ReservationController extends Controller
         return redirect()->route('reservations')->with('info', 'Reservation created');
     }
 
-    public function postEditReservation(Request $request) {
+    public function postEditReservation(ReservationRequest $request) {
+        /*
         $this->validate($request, [
             'park_id' => 'required',
-            'start_time' => 'required',
+            'date' => 'required',
+            'time' => 'required',
             'duration' => 'required',
             'status' => 'required'
         ]);
+        */
 
         $reservation = Reservation::find($request->input('id'));
-        $reservation->start_time = $request->input('start_time');
+        $reservation->date = $request->input('date');
+        $reservation->time = $request->input('time');
         $reservation->duration = $request->input('duration');
         $reservation->save();
         return redirect()->route('reservations')->with('info', 'Reservation time updated');

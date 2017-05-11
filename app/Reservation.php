@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Reservation extends Model
 {
     protected $fillable = [
-        'user_id', 'temp_user_id', 'park_id', 'start_time', 'duration', 'status'
+        'user_id', 'temp_user_id', 'park_id','date', 'time', 'duration', 'status'
     ];
     protected $table = 'reservations';
 

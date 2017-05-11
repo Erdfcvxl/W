@@ -19,7 +19,8 @@ class CreateReservationsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('temp_user_id');
             $table->unsignedInteger('park_id');
-            $table->dateTime('start_time');
+            $table->date('date');
+            $table->time('time');
             $table->unsignedInteger('duration');
             $table->unsignedInteger('status');
             $table->timestamps();

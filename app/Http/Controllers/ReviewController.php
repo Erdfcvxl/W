@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\ReviewRequest;
 use App\Review;
 use Illuminate\Http\Request;
 
@@ -33,8 +34,9 @@ class ReviewController extends Controller
         return view('reviews')->with('info', 'review deleted');
     }
 
-    public function postCreateReview(Request $request)
+    public function postCreateReview(ReviewRequest $request)
     {
+        /*
         $this->validate($request, [
             'park_id' => 'required',
             'user_id' => 'required',
@@ -42,6 +44,7 @@ class ReviewController extends Controller
             'value' => 'required',
             'description' => 'required'
         ]);
+        */
 
         $review = new Review([
             'park_id' => $request->input('park_id'),
@@ -56,8 +59,9 @@ class ReviewController extends Controller
         return redirect()->route('reviews')->with('info', 'Review created');
     }
 
-    public function postEditReview(Request $request)
+    public function postEditReview(ReviewRequest $request)
     {
+        /*
         $this->validate($request, [
             'park_id' => 'required',
             'user_id' => 'required',
@@ -65,6 +69,7 @@ class ReviewController extends Controller
             'value' => 'required',
             'description' => 'required'
         ]);
+        */
 
         $review = Review::find($request->input('id'));
         $review->park_id = $request->input('park_id');

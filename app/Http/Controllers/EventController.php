@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Event;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EventRequest;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -34,7 +35,8 @@ class EventController extends Controller
         return view('admin.editEvent', ['event' => $event, 'eventId' => $id]);
     }
 
-    public function postCreateEvent(Request $request){
+    public function postCreateEvent(EventRequest $request){
+        /*
         $this->validate($request, [
             'park_id' => 'required',
             'event_category' => 'required',
@@ -42,6 +44,7 @@ class EventController extends Controller
             'description' => 'required',
             'date' => 'required'
         ]);
+        */
 
         $event = new Event([
             'park_id' => $request->input('park_id'),
@@ -56,7 +59,8 @@ class EventController extends Controller
         return redirect()->route('admin.events')->with('info', 'Event created: ' . $request->input('name'));
     }
 
-    public function postEditEvent(Request $request) {
+    public function postEditEvent(EventRequest $request) {
+        /*
         $this->validate($request, [
             'park_id' => 'required',
             'event_category' => 'required',
@@ -64,6 +68,7 @@ class EventController extends Controller
             'description' => 'required',
             'date' => 'required'
         ]);
+        */
 
         $event = Event::find($request->input('id'));
         $event->park_id = $request->input('park_id');
