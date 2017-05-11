@@ -19,16 +19,22 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function getReservations() {
+    public function reservations() {
         return $this->hasMany('App\Reservation');
     }
 
-    public function getPark($id) {
-        $park_id = DB::table('park_staff')->where('user_id', '=', $id)->value('park_id');
-        return  DB::table('parks')->where('id', '=', $park_id)->first();
+    public function parkStaff() {
+        return $this->belongsTo('App\ParkStaff');
     }
 
-    public function getParkStaff() {
-        return $this->belongsTo('App\ParkStaff');
+    public function getUser($id) {
+        return DB::table('users')->where('id', $id)->first();
+    }
+
+
+    // getPark???
+    public function getPark($user_id) {
+        $park_id = DB::table('park_staff')->where('user_id', '=', $user_id)->value('park_id');
+        return  DB::table('parks')->where('id', '=', $park_id)->first();
     }
 }

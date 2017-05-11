@@ -25,16 +25,6 @@ class EventController extends Controller
         return view('admin.events', ['events' => $events]);
     }
 
-    public function getParkEvants($park_id) {
-        $events = Event::where('park_id', '=', $park_id)->get();
-        return view('events', ['events' => $events]);
-    }
-
-    public function getEvent($id) {
-        $event = Event::where('id', '=', $id)->first();
-        return view('event', ['event' => $event]);
-    }
-
     public function getCreateEvent() {
         return view('admin.createEvent');
     }

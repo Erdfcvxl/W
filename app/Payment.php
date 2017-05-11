@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     protected $fillable = [
-        'user_id', 'temp_user_id', 'reservation_id', 'park_id', 'amount', 'status'
+        'id', 'user_id', 'temp_user_id', 'reservation_id', 'park_id', 'amount', 'status'
     ];
     protected $table = 'payment';
+
+    public function getPayment($id) {
+        return DB::table('payment')->where('id', $id)->first();
+    }
 
     public function user() {
         return $this->belongsTo('App\User');

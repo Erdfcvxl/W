@@ -25,11 +25,6 @@ class ReservationController extends Controller
         return view('reservations', ['reservations' => $reservations]);
     }
 
-    public function getReservation($id){
-        $reservation = Reservation::where('id', $id)->first();
-        return view('', ['reservation' => $reservation]);
-    }
-
     public function getCreateReservation(){
         return view('createReservation');
     }

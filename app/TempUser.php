@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class TempUser extends Model
 {
     protected $fillable = [
-        'name', 'surname', 'email', 'email', 'phone_number'
+        'id', 'name', 'surname', 'email', 'phone_number'
     ];
-    protected $table = 'temp_user';
+    protected $table = 'temp_users';
+
+    public function getTempUser($id) {
+        return DB::table('temp_users')->where('id', $id)->first();
+    }
 }

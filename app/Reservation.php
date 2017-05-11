@@ -12,15 +12,24 @@ class Reservation extends Model
     ];
     protected $table = 'reservations';
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo('App\User');
     }
 
-    public function tempUser() {
+    public function tempUser()
+    {
         return $this->belongsTo('App\TempUser');
     }
 
-    public function getParkReservations($park_id) {
+    public function getReservation($id)
+    {
+        return DB::table('reservations')->where('id', $id)->first();
+    }
+
+
+    public function getParkReservations($park_id)
+    {
         return DB::table('reservations')
         ->join('users', 'reservations.user_id', '=', 'users.id')
         ->select('reservations.*', 'users.name', 'users.surname', 'users.phone_number')

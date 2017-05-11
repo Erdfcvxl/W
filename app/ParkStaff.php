@@ -11,11 +11,11 @@ class ParkStaff extends Model
     ];
     protected $table = 'park_staff';
 
-    public function getPark() {
+    public function park() {
         return $this->hasOne('App\Park');
     }
 
-    public function getUser() {
+    public function user() {
         return $this->hasOne('App\User');
     }
 }
