@@ -16,6 +16,18 @@
     "jquery": "^3.1.1",
     "laravel-mix": "0.*",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cached" : "*",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-jade": "*",
+    "gulp-less": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.10"
   }
 }

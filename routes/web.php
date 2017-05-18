@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('admin/schedule');
+    return view('public.landing1');
 });
 
 Route::group(['prefix' => 'admin'], function (){

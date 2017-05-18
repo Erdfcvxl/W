@@ -1,0 +1,132 @@
+html {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+* * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
+
+
+
+
+
+//landing background
+.background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.video-background {
+    video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+        background: url(/images/landing_1.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+.preloader {
+    background-color: #fff;
+    height: 100vh;
+    left: 0;
+    margin-left: -50vw;
+    position: absolute;
+    top: 0;
+    transform: translate3D(0,0,0) rotate(0deg);
+    width: 200vw;
+    z-index: 5;
+
+    &.inActive {
+        animation: preloader-swing-off 1s ease-in-out 1s;
+        animation-fill-mode: forwards;
+    }
+
+    &--spinner {
+        .main-preloader();
+
+        &.inActive {
+            animation: fade-out 2s ease 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+//content
+.highlight-text {
+    text-shadow: 1px 1px 1px black;
+}
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate3D(-50%, -50%, 0);
+    text-align: center;
+    width: 280px;
+}
+h1 {
+    .highlight-text();
+    color: white;
+    text-transform: uppercase;
+    font-size: 5em;
+    line-height: 1em;
+    margin: 0;
+}
+
+h4 {
+    .highlight-text();
+    font-family: 'Courgette', cursive;
+    color: white;
+    font-weight: 300;
+    /*text-transform: uppercase;*/
+    text-shadow: 1px 1px 1px black;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+
+body {
+    background-color: black;
+}
+
+.rhombus-button {
+
+    &---big {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        display: block;
+    }
+    &--border {
+        position: absolute;
+        top:0; left: 0;
+        bottom: 0; right: 0;
+        border: 2px solid white;
+        transform: rotate(45deg);
+    }
+}
+
