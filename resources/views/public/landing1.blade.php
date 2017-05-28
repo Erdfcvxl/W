@@ -1,4 +1,4 @@
-@extends('layouts.public')
+@extends('layouts.landing_1')
 
 @section('content')
     <div class="logo">
@@ -6,9 +6,33 @@
         <h4>Wake parkai Lietuvoje</h4>
     </div>
 
-    <a href="#" class="rhombus-button rhombus-button---big">
-        <span class="rhombus-button--border"></span>
-        <span class="rhombus-button--label">Parkai</span>
-    </a>
+
+    <div class="landing-page">
+        <div class="landing-page--primary-button">
+            @include('public.elements.button', [
+                'href' => '#',
+                'label' => 'Parkai',
+                'class' => 'rhombus-button---big'
+            ])
+        </div>
+
+        <div class="landing-page--secondary-button">
+            @include('public.elements.button', [
+                'href' => '#',
+                'label' => 'Apie wake',
+                'class' => ''
+            ])
+        </div>
+
+        <div class="landing-page--tertiary-button">
+            @include('public.elements.button', [
+                'href' => '#',
+                'label' => 'Media',
+                'class' => 'rhombus-button---small'
+            ])
+        </div>
+    </div>
+
+
 
 @stop

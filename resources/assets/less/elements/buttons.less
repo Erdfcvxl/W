@@ -1,0 +1,66 @@
+.rhombus-button {
+    margin: 30px 30px 33px;
+    display: table;
+    text-decoration: none;
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    //modifiers
+    &---big {
+        width: 150px;
+        height: 150px;
+
+        .rhombus-button--label {
+            font-size: 32px;
+        }
+    }
+    &---small {
+        width: 75px;
+        height: 75px;
+
+        .rhombus-button--label {
+            font-size: 14px;
+        }
+    }
+
+    //elements
+    &--border {
+        position: absolute;
+        top:0; left: 0;
+        bottom: 0; right: 0;
+        border: 2px solid white;
+        transform: rotate(45deg);
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -2px; left: -2px;
+            bottom: -2px; right: -2px;
+            border: 1px solid white;
+            transform: translate3D(7px, 7px, 0);
+            transition: transform .3s ease;
+
+            //hover
+
+        }
+
+        &:hover {
+            &::after {
+                transform: translate3D(0,0,0);
+            }
+        }
+
+    }
+    &--label {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+        font-size: 22px;
+    }
+
+
+
+}

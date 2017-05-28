@@ -12,7 +12,7 @@ var webpack = require("webpack");
 gulp.task('browser-sync', function() {
     browserSync({
         server: false,
-        proxy: ".dev"
+        proxy: "wake.dev"
     });
 });
 
@@ -67,4 +67,4 @@ gulp.task('css', function() {
 //main commands
 gulp.task('build', ['css'/*, 'webpack'*/]);
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build', 'watch', 'browser-sync']);
