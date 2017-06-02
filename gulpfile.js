@@ -22,6 +22,7 @@ gulp.task('browser-sync-reload', ['webpack'], function () {
 
 gulp.task('watch', /*['browser-sync'],*/ function() {
     gulp.watch('./resources/assets/less/**/*.less', ['css']);
+    gulp.watch('./resources/assets/js/**/*.js', ['webpack']);
 });
 
 gulp.task('webpack', function (callback) {
@@ -65,6 +66,6 @@ gulp.task('css', function() {
 
 
 //main commands
-gulp.task('build', ['css'/*, 'webpack'*/]);
+gulp.task('build', ['css', 'webpack']);
 
 gulp.task('default', ['build', 'watch', 'browser-sync']);

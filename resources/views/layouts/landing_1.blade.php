@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<!-- Template by html.am -->
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title></title>
-    <link rel="stylesheet" href="{{asset('css/public.min.css')}}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    @include('layouts._head')
+    <title>@yield('title') |</title>
 </head>
 <body>
     <div class="background">
@@ -43,6 +39,10 @@
         video.addEventListener('loadeddata', function() {
             onVideoLoad();
         }, false);
+
+        setTimeout(function() {
+            onVideoLoad();
+        }, 500);
     </script>
 </body>
 </html>

@@ -2,15 +2,15 @@
 
 @section('content')
     <div class="logo">
-        <h1>Wake<br>Lit</h1>
-        <h4>Wake parkai Lietuvoje</h4>
+        <h1 class="logo--heading">Wake<br>Litt</h1>
+        <h4 class="logo--sub-heading">Wake parkai Lietuvoje</h4>
     </div>
 
 
     <div class="landing-page">
         <div class="landing-page--primary-button">
             @include('public.elements.button', [
-                'href' => '#',
+                'href' => route('parks'),
                 'label' => 'Parkai',
                 'class' => 'rhombus-button---big'
             ])
@@ -28,7 +28,7 @@
             @include('public.elements.button', [
                 'href' => '#',
                 'label' => 'Media',
-                'class' => 'rhombus-button---small'
+                'class' => ''
             ])
         </div>
     </div>

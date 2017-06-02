@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('public.landing1');
 });
 
+//Parks view
+Route::get('/parks', ['as' => 'parks', 'uses' => 'ParkController@getList']);
+Route::post('/parks', ['as' => 'filterParks', 'uses' => 'ParkController@postList']);
+
 Route::group(['prefix' => 'admin'], function (){
     Route::get('createEvent', [
         'uses' =>'Admin\EventController@getCreateEvent',

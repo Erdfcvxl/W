@@ -1,9 +1,60 @@
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate3D(-50%, -50%, 0);
+    text-align: center;
+    width: 280px;
+
+    @media screen and (max-width: 767px) {
+        transform: none;
+        top: 15px;
+        left: 15px;
+        width: 140px;
+    }
+
+    &--heading {
+        .highlight-text();
+        color: white;
+        text-transform: uppercase;
+        font-size: 5em;
+        line-height: 1em;
+        margin: 0;
+
+        @media screen and (max-width: 767px) {
+            font-size: 1.5em;
+        }
+    }
+
+    &--sub-heading {
+        .highlight-text();
+        font-family: 'Courgette', cursive;
+        color: white;
+        font-weight: 300;
+        /*text-transform: uppercase;*/
+        text-shadow: 1px 1px 1px black;
+        font-size: 1.5em;
+        margin-top: 10px;
+
+        @media screen and (max-width: 767px) {
+            font-size: .8em;
+        }
+    }
+}
+
 .landing-page {
     position: relative;
     padding: 11px;
     width: 100%;
     height: 100vh;
     z-index: 2;
+
+    @media screen and (max-width: 767px) {
+        max-width: 320px;
+        transform: scale(.6);
+        margin: 15px auto;
+        height: inherit;
+    }
 
     &--primary-button,
     &--secondary-button,
@@ -12,14 +63,27 @@
         top: 30%;
         right: 20%;
         z-index: 2;
+
+        @media screen and (max-width: 767px) {
+            top: 0;
+            right: inherit;
+        }
     }
 
     &--secondary-button {
-        transform: translate3D(-140px, 145px, 0);
+        transform: translate3D(-180px, 283px, 0);
         z-index: 1;
+
+        @media screen and (max-width: 767px) {
+            transform: translate3D(-85px, 237px, 0);
+        }
     }
 
     &--tertiary-button {
-        transform: translate3D(70px, 150px, 0);
+        transform: translate3D(35px, -140px, 0);
+
+        @media screen and (max-width: 767px) {
+            transform: translate3D(220px, -100px, 0);
+        }
     }
 }

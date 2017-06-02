@@ -2,11 +2,18 @@
 <!-- Template by html.am -->
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Fixed Width 2 Blue</title>
-        <link rel="stylesheet" href="{{asset('css/public.min.css')}}">
+        @include('layouts._head')
+        <title>@yield('title') |</title>
     </head>
     <body>
-        @yield('content')
+
+        <main>
+            @yield('content')
+        </main>
+
+        <footer>
+            {{-- Scripts--}}
+            <script type="text/javascript" src="{{asset('js/public.bundle.js')}}"></script>
+        </footer>
     </body>
 </html>

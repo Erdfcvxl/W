@@ -1,13 +1,25 @@
 <?php
 
-namespace App;
+namespace App\Modules\Park;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Park extends Model
 {
+    public $sort_by_nearby;
+    public $sort_by_reviews;
+    public $sort_by_price;
+
     protected $fillable = [
-        'id', 'name','address', 'working_hours', 'website', 'facebook_link', 'latitude', 'longitude'
+        'id',
+        'name',
+        'city',
+        'address',
+        'working_hours',
+        'website',
+        'facebook_link',
+        'latitude',
+        'longitude'
     ];
     protected $table = 'parks';
 
