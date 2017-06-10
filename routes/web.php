@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('public.landing1');
 });
 
+Route::get('/test', ['as' => 'test', 'uses' => 'ParkController@testFilter']);
+
 //Parks view
 Route::get('/parks', ['as' => 'parks', 'uses' => 'ParkController@getList']);
 Route::post('/parks', ['as' => 'filterParks', 'uses' => 'ParkController@postList']);

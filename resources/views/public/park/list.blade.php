@@ -29,9 +29,9 @@
     {!! Form::model($parkFilter, ['route' => 'filterParks', 'id' => 'park-filters']) !!}
         {{ Form::token() }}
 
-        {{ Form::checkbox('sort_by_nearby') }}<br>
-        {{ Form::checkbox('sort_by_reviews') }}<br>
-        {{ Form::checkbox('sort_by_price') }}<br>
+        {{ Form::checkbox('sort_by', 'nearby') }}<br>
+        {{ Form::checkbox('sort_by', 'reviews') }}<br>
+        {{ Form::checkbox('sort_by', 'price') }}<br>
 
         <br>
 

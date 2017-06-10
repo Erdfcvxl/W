@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReviewObjectsTable extends Migration
+class CreateObjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,12 @@ class CreateReviewObjectsTable extends Migration
     public function up()
     {
         Schema::defaultStringLength(191);
-        Schema::create('review_objects', function (Blueprint $table) {
+        Schema::create('objects', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
             $table->unsignedInteger('park_id');
-            $table->unsignedInteger('object_id');
-            $table->unsignedInteger('score');
-            $table->string('comment', 255);
+            $table->unsignedInteger('gallery_id')->nullable();
+            $table->string('name', 70);
+            $table->string('description', 255)->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateReviewObjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('review_objects');
+        Schema::dropIfExists('objects');
     }
 }

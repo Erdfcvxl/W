@@ -1,13 +1,19 @@
 <?php
 
-namespace App;
+namespace App\Modules;
 
 use Illuminate\Database\Eloquent\Model;
 
 class ReviewObject extends Model
 {
     protected $fillable = [
-        'id', 'name'
+        'id',
+        'park_id',
+        'object_id',
+        'score',
+        'comment',
+        'created_at',
+        'updated_at'
     ];
     protected $table = 'review_objects';
 

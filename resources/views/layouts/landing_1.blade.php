@@ -2,6 +2,7 @@
 <html>
 <head>
     @include('layouts._head')
+    <link rel="stylesheet" href="{{asset('css/public.landing.min.css')}}">
     <title>@yield('title') |</title>
 </head>
 <body>

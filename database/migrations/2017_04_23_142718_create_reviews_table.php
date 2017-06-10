@@ -18,9 +18,14 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('park_id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('object_id');
-            $table->unsignedInteger('value');
-            $table->string('description');
+            $table->unsignedInteger('cable_system_score');
+            $table->string('cable_system_desc')->nullable();
+            $table->unsignedInteger('water_score');
+            $table->string('water_desc')->nullable();
+            $table->unsignedInteger('surroundings_score');
+            $table->string('surroundings_desc')->nullable();
+            $table->unsignedInteger('staff_score');
+            $table->string('staff_desc')->nullable();
             $table->timestamps();
         });
     }

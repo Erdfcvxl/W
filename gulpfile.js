@@ -47,7 +47,7 @@ gulp.task('js-compress', function() {
 
 gulp.task('css', function() {
     gulp.src([
-        './resources/assets/less/public.less',
+        './resources/assets/less/public.landing.less',
     ])
         .pipe(gulpLess())
         .on('error', function(err) {

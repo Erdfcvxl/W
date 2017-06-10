@@ -17,7 +17,7 @@ class CreateParksTable extends Migration
         Schema::create('parks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 30);
-            $table->integer('city', 11)->nullable();
+            $table->integer('city')->nullable();
             $table->string('address', 255);
             $table->string('working_hours', 25)->nullable();
             $table->string('website', 70)->nullable();
