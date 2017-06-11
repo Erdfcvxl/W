@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="logo">
-        <h1 class="logo--heading">Wake<br>Litt</h1>
+        <h1 class="logo--heading">Wake<br>Lit</h1>
         <h4 class="logo--sub-heading">Wake parkai Lietuvoje</h4>
     </div>
 
