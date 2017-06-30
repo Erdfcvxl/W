@@ -17,7 +17,7 @@ class Object extends Model
 
     public function park()
     {
-        return $this->belongsTo('App\Modules\Park\Park');
+        return $this->belongsTo('App\Modules\Park\ParksPricing');
     }
 
     public function reviews()

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Modules\Park\Park;
+use App\Modules\Park\ParksPricing;
 use App\Services\ParkService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -13,7 +13,7 @@ class ParkController extends Controller
 
     public function getList()
     {
-        $parkFilter = new Park();
+        $parkFilter = new ParksPricing();
 
         return view($this->view_path . "list", [
             'parkFilter' => $parkFilter
@@ -22,7 +22,7 @@ class ParkController extends Controller
 
     public function postList(Request $request)
     {
-        $park = new Park($request->all());
+        $park = new ParksPricing($request->all());
         $parkService = new ParkService($park);
         $parkService->setSort($request->all());
 

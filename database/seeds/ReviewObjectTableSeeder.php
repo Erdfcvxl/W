@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Modules\Park\Park;
+use App\Modules\Park\ParksPricing;
 
 class ReviewObjectTableSeeder extends Seeder
 {
