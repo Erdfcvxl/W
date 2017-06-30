@@ -13,14 +13,10 @@
     "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^3.2.3",
-    "jquery": "^3.1.1",
-    "laravel-mix": "0.*",
-    "lodash": "^4.17.4",
-    "vue": "^2.1.10",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
-    "gulp-cached" : "*",
+    "gulp-cached": "*",
     "gulp-clean-css": "^3.0.4",
     "gulp-jade": "*",
     "gulp-less": "^3.1.0",
@@ -28,6 +24,10 @@
     "gulp-rename": "*",
     "gulp-uglify": "*",
     "gulp-util": "^3.0.7",
-    "gulp-watch": "^4.3.10"
+    "gulp-watch": "^4.3.10",
+    "jquery": "^3.1.1",
+    "laravel-mix": "0.*",
+    "lodash": "^4.17.4",
+    "vue": "^2.1.10"
   }
 }

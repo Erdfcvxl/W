@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Modules\Park\Park;
-use App\Modules\Park\ParkService;
+use App\Services\ParkService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 

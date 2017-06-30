@@ -29,9 +29,9 @@
     {!! Form::model($parkFilter, ['route' => 'filterParks', 'id' => 'park-filters']) !!}
         {{ Form::token() }}
 
-        {{ Form::checkbox('sort_by', 'nearby') }}<br>
-        {{ Form::checkbox('sort_by', 'reviews') }}<br>
-        {{ Form::checkbox('sort_by', 'price') }}<br>
+        {{ Form::checkbox('sort_by', 'nearby') }} Rasti arčiausiai esančius parkus<br>
+        {{ Form::checkbox('sort_by', 'reviews') }} Rasti geriausiai vertinamus parkus<br>
+        {{ Form::checkbox('sort_by', 'price') }} Rasti pigiausius parkus<br>
 
         <br>
 

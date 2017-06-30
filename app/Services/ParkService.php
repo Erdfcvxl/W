@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Modules\Park;
+namespace App\Services;
 
+use App\Modules\Park\Park;
 use App\Modules\Review\Review;
 use Illuminate\Support\Facades\DB;
 
@@ -39,20 +40,18 @@ class ParkService
     {
         $sortCase = $this->getSortCase();
 
-
-
         switch($sortCase) {
             case 0 : //No quick filter(sorter) is selected
                 $this->park = $this->park->orderBy('name', 'ASC');
 
             case 1 : //Nearby filter selected
                  //todo: get current user position and park position, calculate difference, then sort by difference
-
+                break;
             case 2 : //Reviews filter selected
                 $this->park = $this->park
                     ->leftJoin(Review::getJoinTemplate(), 'reviews.park_id', '=', 'parks.id')
                     ->orderBy('review_score', 'DESC');
-
+                break;
             case 3 : //Price filter selected
                 //todo: create filter
         }
