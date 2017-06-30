@@ -2,7 +2,8 @@
 
 namespace App\Services;
 
-use App\Modules\Park\Park;
+use App\Models\Park;
+use App\Models\ParksPricing;
 use App\Modules\Review\Review;
 use Illuminate\Support\Facades\DB;
 
@@ -55,6 +56,15 @@ class ParkService
             case 3 : //Price filter selected
                 //todo: create filter
         }
+
+        return $this->park->get();
+    }
+
+    public function getParksSortedByPrice()
+    {
+        $this->park = $this->park
+            ->leftJoin(ParksPricing::getJoinTemplate(), 'parks_pricing.park_id', '=', 'parks.id')
+            ->orderBy(DB::raw("CASE WHEN min_price is null THEN 200 ELSE min_price END"), 'ASC');
 
         return $this->park->get();
     }
