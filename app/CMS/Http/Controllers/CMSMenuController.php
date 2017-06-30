@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 class CMSMenuController extends Controller
 {
     public function __construct() {
-        
+
     }
 
     public function index()
