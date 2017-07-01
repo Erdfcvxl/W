@@ -17,6 +17,8 @@ class ParkServiceTest extends TestCase
      * @return void
      */
 
+    private $parkService;
+
     public function setUp()
     {
         parent::setUp();
@@ -30,9 +32,16 @@ class ParkServiceTest extends TestCase
     public function testGetParksSortedByPrice()
     {
         $result = $this->parkService->getParksSortedByPrice();
-        
+
         $this->assertCount(5, $result);
         $this->assertEquals(1, $result[0]->id);
         $this->assertEquals(2, $result[1]->id);
+    }
+
+    public function testGetAvailableDistricts()
+    {
+        $result = $this->parkService->getAvailableDistricts();
+
+        //$this->assertCount(2, $result);
     }
 }

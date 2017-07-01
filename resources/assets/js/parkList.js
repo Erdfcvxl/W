@@ -21,7 +21,7 @@ export class ParkList
             return el.getAttribute('type') === 'text';
         };
 
-        let inputs = JS.selectAll('input', self.form);
+        let inputs = JS.selectAll('input, select', self.form);
 
         for(let i = 0; i < inputs.length; i++) {
             if(textInput(inputs[i])) {
@@ -47,7 +47,6 @@ export class ParkList
         let url = self.form.getAttribute('action');
         let data = new FormData(self.form);
         let http = new XMLHttpRequest();
-
 
         http.onreadystatechange = function() {
             if (http.readyState === XMLHttpRequest.DONE ) {

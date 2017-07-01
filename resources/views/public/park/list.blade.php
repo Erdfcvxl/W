@@ -35,8 +35,8 @@
 
         <br>
 
-        {!! Form::text('name') !!}<br>
-        {!! Form::select('city') !!}<br><br>
+        {!! Form::text('name') !!} Pavadinimas<br>
+        {!! Form::select('district', $districts) !!} Miestas<br><br>
 
         {!! Form::button('filter', ['type' => 'submit']) !!}<br>
 

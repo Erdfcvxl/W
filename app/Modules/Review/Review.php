@@ -44,7 +44,7 @@ class Review extends Model
      * Gaunamas objekų reviews'ų ir reviews'ų mišinukas,
      * Jis returninamas kur bus prijungtas prie kito querio.
      */
-    public static function getJoinTemplate()
+    public static function getReviewScoreJoin()
     {
         //First query
         $select1 = 'park_id, 

@@ -3,6 +3,7 @@
     <tr>
         <th>Name</th>
         <th>Reviews</th>
+        <th>Min ride price</th>
     </tr>
     </thead>
     <tbody>
@@ -14,6 +15,9 @@
                  </td>
                  <td>
                      {{ $park->review_score }}
+                 </td>
+                 <td>
+                     {{ $park->min_price }}
                  </td>
              </tr>
 

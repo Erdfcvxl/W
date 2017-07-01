@@ -16,11 +16,11 @@ class CreateParksTable extends Migration
         Schema::defaultStringLength(191);
         Schema::create('parks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 30);
-            $table->integer('city')->nullable();
+            $table->string('name', 32);
+            $table->string('district', 32)->nullable();
             $table->string('address', 255);
-            $table->string('working_hours', 25)->nullable();
-            $table->string('website', 70)->nullable();
+            $table->string('working_hours', 16)->nullable();
+            $table->string('website', 255)->nullable();
             $table->string('facebook_link')->nullable();
             $table->integer('latitude')->nullable();
             $table->integer('longitude')->nullable();

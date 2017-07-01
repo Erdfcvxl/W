@@ -14,7 +14,7 @@ class Park extends Model
     protected $fillable = [
         'id',
         'name',
-        'city',
+        'district',
         'address',
         'working_hours',
         'website',

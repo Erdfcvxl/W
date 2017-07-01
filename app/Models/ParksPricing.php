@@ -23,7 +23,7 @@ class ParksPricing extends Model
         return $this->hasOne('App\Models\Park', 'id', 'park_id');
     }
 
-    public static function getJoinTemplate()
+    public static function getMinRidePriceJoin()
     {
         $select = 'park_id,
             min(wakeboarding_price) as min_price';

@@ -95,7 +95,7 @@ class ParkList {
             return el.getAttribute('type') === 'text';
         };
 
-        let inputs = __WEBPACK_IMPORTED_MODULE_0__functions__["a" /* JS */].selectAll('input', self.form);
+        let inputs = __WEBPACK_IMPORTED_MODULE_0__functions__["a" /* JS */].selectAll('input, select', self.form);
 
         for (let i = 0; i < inputs.length; i++) {
             if (textInput(inputs[i])) {
