@@ -23,6 +23,7 @@ class CMSServiceProvider extends ServiceProvider
 
 
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'cms');
+
     }
 
     public function map()

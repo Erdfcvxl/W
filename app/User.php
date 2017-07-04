@@ -24,15 +24,13 @@ class User extends Authenticatable
     }
 
     public function parkStaff() {
-        return $this->belongsTo('App\ParkStaff');
+        return $this->hasOne('App\CMS\Models\ParkStaff', 'user_id', 'id');
     }
 
     public function getUser($id) {
         return DB::table('users')->where('id', $id)->first();
     }
 
-
-    // getPark???
     public function getPark($user_id) {
         $park_id = DB::table('park_staff')->where('user_id', '=', $user_id)->value('park_id');
         return  DB::table('parks')->where('id', '=', $park_id)->first();

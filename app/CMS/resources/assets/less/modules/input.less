@@ -1,0 +1,36 @@
+.input {
+    background-color: @input-background-color;
+    border-radius: 5px;
+    border: none;
+    color: @input-text-color;
+    height: 30px;
+    margin: 7px 0;
+    padding-left:12px;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px @input-background-color inset;
+        -webkit-text-fill-color: @input-text-color !important;
+    }
+
+}
+
+.button {
+    background-color: @input-background-color;
+    border-radius: 5px;
+    border: 1px solid #353535;
+    color: @input-text-color;
+    height: 30px;
+    padding: 2px;
+
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background-color: @input-button-hover-background-color;
+    }
+}

@@ -68,5 +68,15 @@ class ParkService
 
         return $this->park->get();
     }
+
+    public function updatePark($id, $attributes)
+    {
+        $this->park = $this->park->find($id);
+        if($this->park->update($attributes)) {
+            return true;
+        }
+
+        return false;
+    }
 }
 

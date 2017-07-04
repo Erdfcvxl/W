@@ -22,6 +22,7 @@ gulp.task('browser-sync-reload', ['webpack'], function () {
 
 gulp.task('watch', /*['browser-sync'],*/ function() {
     gulp.watch('./resources/assets/less/**/*.less', ['css']);
+    gulp.watch('./app/CMS/resources/assets/less/**/*.less', ['cms-css']);
     gulp.watch('./resources/assets/js/**/*.js', ['webpack']);
 });
 
@@ -64,8 +65,26 @@ gulp.task('css', function() {
         }));
 });
 
+gulp.task('cms-css', function() {
+    gulp.src([
+        './app/CMS/resources/assets/less/cms.less',
+    ])
+        .pipe(gulpLess())
+        .on('error', function(err) {
+            gulpUtil.log(err.message);
+        })
+        .pipe(gulpAutoprefixer({browsers: ['last 2 versions']}))
+        .pipe(gulpCleanCss())
+        .pipe(gulpRename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('./public/cms/css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
+});
 
 //main commands
-gulp.task('build', ['css', 'webpack']);
+gulp.task('build', ['css', 'cms-css', 'webpack']);
 
 gulp.task('default', ['build', 'watch', 'browser-sync']);

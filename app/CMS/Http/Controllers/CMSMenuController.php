@@ -12,12 +12,8 @@ use App\Http\Controllers\Controller;
 
 class CMSMenuController extends Controller
 {
-    public function __construct() {
-
-    }
-
-    public function index()
+    public function getMenu()
     {
-        return view('admin');
+        return view('cms::menu');
     }
 }
